@@ -1,0 +1,77 @@
+﻿1. Lua configuration
+Name
+Description
+Default
+map_frame
+Publishing submaps, theo tree thi frame nay la parent cua pose
+Map
+tracking_frame
+Duoc theo doi boi thuat toan SLAM, neu IMU duoc su dung thi no thuong la vi tri
+imu_link
+published_frame
+Child frame cho xuat ban pose. Vi du “odom” duoc cung cap boi mot phan khac trong he thong → pose cua odom trong map_frame se duoc xuat ban, neu khong thi chon base_link
+
+Provide_odom_frame
+Neu enable → non-loop closed, continuous pose, local duoc pub len odom_frame trong map_frame
+True
+Odom_frame
+Frame giua published_frame va map_frame duoc su dung cho publishing ket qua SLAM
+Odom
+publish_frame_projected_to_2d
+Published pose bi han che boi 2D pose (khong roll, pitch hoac z-offset)
+
+use_odometry
+Sub vao topic “odom”→ odom phai duoc cung cap
+False
+use_nav_sat
+Sub vao topic “fix” → du lieu navigation phai duoc cung cap
+False
+use_landmarks
+Sub vao topic “landmarks” → landmarks phai duoc cung cap
+False
+num_laser_scans
+So luong topic lasers scan de sub.  Sub toi topic “scan” cho moi cam bien laser hoac topic “scan_1”, “scan_2” cho multiple laser scanners
+
+num_multi_echo_laser_scan
+So luong topic multi-echo laser scan de sub
+
+num_subdivisions_per_laser_scan
+So luong point clouds de chia nho moi lan quet laser
+
+num_point_clouds
+So luong point cloud de sub → sub toi topic “points2” cho moi may quet or “points2_1”, “points2_2” cho multiple
+
+lookup_transform_timeout_sec
+Thoi gian cho(s) cho viec tra cuu transform (tf2)
+
+submap_publish_period_sec
+Thoi gian (s) cho viec pub submap pose
+0.3s
+pose_publish_period_sec
+Thoi gian (s) cho viec pub pose
+5e-3 vs frequency 200
+publish_to_tf
+Cung cap TF tranforms
+True
+publish_tracked_pose
+Pub of tracked pose to topic “tracked_pose”
+
+trajectory_publish_period_sec
+Thoi gian(s) cho viec pub trajectory markers
+20e^-3 cho 30ms
+rangefinder_sampling_ratio
+Ti le lay may cho messages range finders
+
+odometry_sampling_ratio
+Ti le lay mau cho messages odometry
+
+fixed_frame_sampling_ratio
+Ti le lay mau cho messages fixed frame
+
+imu_sampling_ratio
+Ti le lay mau cho messages Imu
+
+landmarks_sampling_ratio
+Ti le lay mau cho messages landmarks
+
+
